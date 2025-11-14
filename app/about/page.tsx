@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function AboutPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [portfolioToast, setPortfolioToast] = useState(false);
 
   return (
     <main className="min-h-screen bg-[#050816] text-white relative overflow-hidden">
@@ -26,7 +27,7 @@ export default function AboutPage() {
             className="h-12 w-12 object-contain"
           />
         </motion.div>
-        <nav className="hidden md:flex gap-8 text-sm text-gray-300">
+        <nav className="hidden md:flex items-center gap-8 text-sm text-gray-300">
           <Link href="/" className="hover:text-white transition">
             Accueil
           </Link>
@@ -36,10 +37,32 @@ export default function AboutPage() {
           >
             À propos
           </Link>
-          <a href="/#portfolio" className="hover:text-white transition">
-            Portfolio
-          </a>
-          <a href="/#contact" className="hover:text-white transition">
+
+          <motion.button
+            type="button"
+            onClick={() => {
+              setPortfolioToast(true);
+              setTimeout(() => setPortfolioToast(false), 1800);
+            }}
+            className="relative text-gray-300 hover:text-lime-400 transition overflow-hidden"
+            initial="rest"
+            animate="rest"
+            whileHover="hover"
+          >
+            <span className="relative inline-flex items-center">
+              <span className="relative z-10">Portfolio</span>
+              <motion.span
+                variants={{
+                  rest: { scaleX: 0, opacity: 0 },
+                  hover: { scaleX: 1, opacity: 1 },
+                }}
+                className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 bg-lime-400"
+                style={{ originX: 0 }}
+              />
+            </span>
+          </motion.button>
+
+          <a href="/contact" className="hover:text-white transition">
             Contact
           </a>
         </nav>
@@ -55,6 +78,24 @@ export default function AboutPage() {
           <span className="block h-[2px] w-6 bg-white"></span>
         </motion.button>
       </motion.header>
+
+      <AnimatePresence>
+        {portfolioToast && (
+          <motion.div
+            key="portfolio-toast-about"
+            className="fixed top-4 left-0 right-0 z-40 flex justify-center px-4"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+          >
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0b1120] border border-red-400/70 px-4 py-2 text-xs text-gray-100 shadow-lg">
+              <span>🚧</span>
+              <span>Section en construction.</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {menuOpen && (
@@ -111,17 +152,34 @@ export default function AboutPage() {
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a
-                  href="/#portfolio"
-                  onClick={() => setMenuOpen(false)}
-                  className="hover:text-lime-400 transition"
+                <motion.button
+                  type="button"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setPortfolioToast(true);
+                    setTimeout(() => setPortfolioToast(false), 1800);
+                  }}
+                  className="relative text-gray-300 hover:text-lime-400 transition overflow-hidden"
+                  initial="rest"
+                  animate="rest"
+                  whileHover="hover"
                 >
-                  Portfolio
-                </a>
+                  <span className="relative inline-flex items-center">
+                    <span className="relative z-10">Portfolio</span>
+                    <motion.span
+                      variants={{
+                        rest: { scaleX: 0, opacity: 0 },
+                        hover: { scaleX: 1, opacity: 1 },
+                      }}
+                      className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 bg-lime-400"
+                      style={{ originX: 0 }}
+                    />
+                  </span>
+                </motion.button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <a
-                  href="/#contact"
+                  href="/contact"
                   onClick={() => setMenuOpen(false)}
                   className="hover:text-lime-400 transition"
                 >
@@ -193,9 +251,12 @@ export default function AboutPage() {
             </p>
             <div className="mt-8">
               <motion.a
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-lime-400 text-black text-sm font-semibold tracking-wide shadow-lg shadow-lime-500/40 hover:bg-lime-300 transition"
-                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(190,242,100,0.5)" }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 25px rgba(190,242,100,0.5)",
+                }}
                 whileTap={{ scale: 0.96 }}
               >
                 Discutons de votre projet
@@ -225,6 +286,34 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </motion.section>
+
+      <motion.footer
+        className="w-full max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
+      >
+        <span>© {new Date().getFullYear()} T2S. Tous droits réservés.</span>
+
+        <div className="flex gap-4">
+          <motion.a
+            href="http://github.com/SrdTibo"
+            className="hover:text-lime-400"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            GitHub
+          </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/thibault-serdet/"
+            className="hover:text-lime-400"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            LinkedIn
+          </motion.a>
+        </div>
+      </motion.footer>
     </main>
   );
 }

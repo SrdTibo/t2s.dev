@@ -6,8 +6,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [portfolioNotice, setPortfolioNotice] = useState(false);
 
   const skills = [
+    {
+      label: "Ref. Google (SEO)",
+      description:
+        "Optimisation SEO technique et visibilité sur les moteurs de recherche.",
+      icon: "🔍",
+    },
+    {
+      label: "WordPress",
+      description: "Sites vitrines, CMS personnalisés et solutions e-commerce.",
+      icon: "📝",
+    },
     {
       label: "React / Next.js",
       description: "Interfaces modernes, rapides et optimisées pour le SEO.",
@@ -18,17 +30,14 @@ export default function Home() {
       description: "Code robuste, typé et maintenable dans le temps.",
       icon: "🧠",
     },
-    {
-      label: "API Node.js",
-      description: "Backends fiables, sécurisés et bien structurés.",
-      icon: "🛠️",
-    },
-    {
-      label: "Cloud & Déploiement",
-      description: "Mise en production continue et environnement scalable.",
-      icon: "☁️",
-    },
   ];
+
+  const handlePortfolioClick = () => {
+    setPortfolioNotice(true);
+    setTimeout(() => {
+      setPortfolioNotice(false);
+    }, 2500);
+  };
 
   return (
     <main className="min-h-screen bg-[#050816] text-white flex flex-col relative overflow-hidden">
@@ -50,7 +59,7 @@ export default function Home() {
           />
         </motion.div>
 
-        <nav className="hidden md:flex gap-8 text-sm text-gray-300">
+        <nav className="hidden md:flex items-center gap-8 text-sm text-gray-300">
           <Link
             href="/"
             className="text-lime-400 font-semibold border-b-2 border-lime-400 pb-1 hover:text-lime-300 transition"
@@ -60,10 +69,29 @@ export default function Home() {
           <Link href="/about" className="hover:text-white transition">
             À propos
           </Link>
-          <a href="/#portfolio" className="hover:text-white transition">
-            Portfolio
-          </a>
-          <a href="/#contact" className="hover:text-white transition">
+
+          <motion.button
+            type="button"
+            onClick={handlePortfolioClick}
+            className="relative text-gray-300 transition"
+            initial="rest"
+            animate="rest"
+            whileHover="hover"
+          >
+            <span className="relative inline-flex items-center">
+              <span className="relative z-10">Portfolio</span>
+              <motion.span
+                variants={{
+                  rest: { scaleX: 0, opacity: 0 },
+                  hover: { scaleX: 1, opacity: 1 },
+                }}
+                className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 bg-lime-400"
+                style={{ originX: 0 }}
+              />
+            </span>
+          </motion.button>
+
+          <a href="/contact" className="hover:text-white transition">
             Contact
           </a>
         </nav>
@@ -79,6 +107,24 @@ export default function Home() {
           <span className="block h-[2px] w-6 bg-white"></span>
         </motion.button>
       </motion.header>
+
+      <AnimatePresence>
+        {portfolioNotice && (
+          <motion.div
+            key="portfolio-toast-home"
+            className="fixed top-4 left-0 right-0 z-40 flex justify-center px-4"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+          >
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0b1120] border border-red-400/70 px-4 py-2 text-xs text-gray-100 shadow-lg">
+              <span>🚧</span>
+              <span>Section en construction.</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {menuOpen && (
@@ -135,17 +181,28 @@ export default function Home() {
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a
-                  href="/#portfolio"
-                  onClick={() => setMenuOpen(false)}
-                  className="hover:text-lime-400 transition"
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    handlePortfolioClick();
+                  }}
+                  className="relative text-gray-300 hover:text-lime-300 transition duration-200"
                 >
-                  Portfolio
-                </a>
+                  <span className="relative inline-flex items-center">
+                    <span className="relative z-10">Portfolio</span>
+                    <motion.span
+                      initial={{ scaleX: 0, opacity: 0 }}
+                      whileHover={{ scaleX: 1, opacity: 1 }}
+                      className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 bg-lime-400"
+                      style={{ originX: 0 }}
+                    />
+                  </span>
+                </button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <a
-                  href="/#contact"
+                  href="/contact"
                   onClick={() => setMenuOpen(false)}
                   className="hover:text-lime-400 transition"
                 >
@@ -187,9 +244,12 @@ export default function Home() {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <motion.a
-              href="#contact"
+              href="contact"
               className="px-6 py-3 rounded-full bg-lime-400 text-black font-semibold text-sm shadow-lg shadow-lime-500/30 hover:bg-lime-300 transition inline-flex items-center justify-center"
-              whileHover={{ scale: 1.04, boxShadow: "0 0 25px rgba(190,242,100,0.5)" }}
+              whileHover={{
+                scale: 1.04,
+                boxShadow: "0 0 25px rgba(190,242,100,0.5)",
+              }}
               whileTap={{ scale: 0.96 }}
             >
               Me contacter
@@ -228,18 +288,22 @@ export default function Home() {
               </div>
 
               <p className="text-xs text-gray-500">
-                Un stack moderne pour des projets maintenables, performants et évolutifs.
+                Un stack moderne pour des projets maintenables, performants et
+                évolutifs.
               </p>
 
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.label}
-                    className="group relative flex flex-col gap-2 rounded-2xl border border-lime-500/60 bg-[#050816] px-4 py-4 shadow-[0_0_0_1px_rgba(190,242,100,0.08)]"
+                    className="group relative flex flex-col gap-2 rounded-2xl bg-[#050816] px-4 py-4 shadow-[0_0_0_1px_rgba(190,242,100,0.08)]"
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35, delay: 0.25 + index * 0.05 }}
-                    whileHover={{ scale: 1.03, backgroundColor: "rgba(190,242,100,0.08)" }}
+                    transition={{ duration: 0.35 }}
+                    whileHover={{
+                      scale: 1.03,
+                      backgroundColor: "rgba(190,242,100,0.08)",
+                    }}
                     whileTap={{ scale: 0.97 }}
                   >
                     <div className="flex items-center gap-3">
