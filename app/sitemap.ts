@@ -1,6 +1,8 @@
-export default function sitemap() {
-  const baseUrl = "https://t2s-france.com";
+export const dynamic = "force-static";
 
+const baseUrl = "https://t2s-france.com";
+
+export default function sitemap() {
   return [
     {
       url: baseUrl,
@@ -14,5 +16,10 @@ export default function sitemap() {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/developpeur-web-belfort`,
+      lastModified: new Date(),
+    },
   ];
 }
+  
