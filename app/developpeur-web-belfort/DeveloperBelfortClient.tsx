@@ -472,10 +472,22 @@ export default function DeveloperBelfortClient() {
 
         <div className="flex gap-4">
           <motion.a
+            href="https://www.facebook.com/people/T2S-D%C3%A9veloppement/61583903848408/"
+            className="hover:text-lime-400"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook
+          </motion.a>
+          <motion.a
             href="http://github.com/SrdTibo"
             className="hover:text-lime-400"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub
           </motion.a>
@@ -484,6 +496,8 @@ export default function DeveloperBelfortClient() {
             className="hover:text-lime-400"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             LinkedIn
           </motion.a>
