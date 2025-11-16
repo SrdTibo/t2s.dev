@@ -36,10 +36,10 @@ export default function ContactPageClient() {
 
     try {
       await emailjs.send(
-        "service_u06b7f7",
+        "service_uo6b7f7",
         "template_uend7bw",
         params,
-        "ZZktrluZRhk8nwbhy"
+        "ZZktrIuZRhk8nwbhy"
       );
       setSentToast(true);
       form.reset();
