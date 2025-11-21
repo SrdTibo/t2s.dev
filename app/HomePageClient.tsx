@@ -292,12 +292,16 @@ export default function HomePageClient() {
             </motion.a>
 
             <motion.a
-              href="#services"
+              href="#"
               className="text-sm text-gray-300 hover:text-white underline-offset-4 hover:underline"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
+              onClick={() => {
+                    setMenuOpen(false);
+                    handlePortfolioClick();
+                  }}
             >
-              Voir mes services
+              Voir mes projets
             </motion.a>
           </div>
         </motion.div>

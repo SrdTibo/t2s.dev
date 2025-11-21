@@ -397,7 +397,7 @@ export default function ContactPageClient() {
 
               <div className="space-y-3 text-sm text-gray-200">
                 <p className="text-gray-300">
-                  Basé en France, disponible pour des projets à distance ou en collaboration.
+                  Basé à Belfort, disponible pour des projets à distance ou en collaboration.
                 </p>
 
                 <div className="space-y-1">
