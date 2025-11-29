@@ -24,3 +24,244 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* ====== CENTRALRP PAGE ====== */
+
+.crp-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1f1915 0, #000 55%);
+  color: #eee5e9;
+  padding: 32px 16px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.crp-inner {
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Logo */
+
+.crp-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.crp-logo-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 10px;
+}
+
+.crp-logo {
+  max-width: 240px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.12));
+}
+
+/* Sections */
+
+.crp-section {
+  margin-top: 32px;
+}
+
+.crp-section-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.crp-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+/* Fonctionnalités */
+
+.crp-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 10px;
+}
+
+.crp-feature-col h3 {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.crp-feature-col ul {
+  list-style: none;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.crp-feature-col ul li {
+  color: #7c7c7c;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.crp-feature-col ul li::before {
+  content: "•";
+  display: inline-block;
+  width: 14px;
+  color: #7c7c7c;
+}
+
+@media (max-width: 800px) {
+  .crp-features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Avantages */
+
+.crp-advantages-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.crp-adv-card {
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+}
+
+.crp-adv-card h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+
+.crp-adv-text {
+  margin-top: 24px;
+  font-size: 0.9rem;
+}
+
+/* Pricing */
+
+.crp-pricing-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.crp-pricing-header p {
+  font-size: 0.95rem;
+  color: #7c7c7c;
+}
+
+.crp-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.crp-plan {
+  background: linear-gradient(145deg, #1c1714, #13100f);
+  border-radius: 18px;
+  border: 1px solid #2c2623;
+  padding: 16px 16px 14px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 28px rgba(0, 0, 0, 0.75);
+  color: #eee5e9;
+}
+
+.crp-plan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.crp-plan--small::before {
+  background: radial-gradient(circle at top, #4ade80, transparent 60%);
+}
+
+.crp-plan--medium::before {
+  background: radial-gradient(circle at top, #60a5fa, transparent 60%);
+}
+
+.crp-plan--large::before {
+  background: radial-gradient(circle at top, #fb923c, transparent 60%);
+}
+
+.crp-plan--xl::before {
+  background: radial-gradient(circle at top, #f97373, transparent 60%);
+}
+
+.crp-plan-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 6px;
+}
+
+.crp-plan-name {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.crp-plan-members {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.crp-plan-price {
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem;
+  margin: 10px 0 6px;
+  font-weight: 600;
+}
+
+.crp-plan-body {
+  position: relative;
+  z-index: 1;
+}
+
+.crp-plan-body p {
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+}
+
+.crp-plan-list {
+  list-style: none;
+  margin-top: 2px;
+}
+
+.crp-plan-list li {
+  font-size: 0.86rem;
+  color: #7c7c7c;
+  line-height: 1.4;
+}
+
+.crp-plan-list li::before {
+  content: "✓";
+  color: #b6ffb6;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.crp-footer-note {
+  margin-top: 16px;
+  text-align: right;
+  color: #7c7c7c;
+  font-size: 0.82rem;
+}
