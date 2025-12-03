@@ -11,10 +11,23 @@ export default function ContactPageClient() {
   const [sentToast, setSentToast] = useState(false);
   const [errorToast, setErrorToast] = useState(false);
   const [isSending, setIsSending] = useState(false);
+  const [isEmailVisible, setIsEmailVisible] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState("");
+  const [captchaError, setCaptchaError] = useState("");
+
 
   const handlePortfolioClick = () => {
     setPortfolioToast(true);
     setTimeout(() => setPortfolioToast(false), 1800);
+  };
+
+  const handleCaptchaCheck = () => {
+    if (captchaValue.trim() === "7") {
+      setIsEmailVisible(true);
+      setCaptchaError("");
+    } else {
+      setCaptchaError("Réponse incorrecte, veuillez réessayer.");
+    }
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -399,16 +412,6 @@ export default function ContactPageClient() {
                 <p className="text-gray-300">
                   Basé à Belfort, disponible pour des projets à distance ou en collaboration.
                 </p>
-
-                <div className="space-y-1">
-                  <p className="text-xs uppercase tracking-[0.2em] text-gray-500">Email</p>
-                  <a
-                    href="mailto:t2s.france.contact@gmail.com"
-                    className="text-sm text-lime-300 hover:text-lime-200 break-all"
-                  >
-                    t2s.france.contact@gmail.com
-                  </a>
-                </div>
 
                 <div className="space-y-1">
                   <p className="text-xs uppercase tracking-[0.2em] text-gray-500">Réseaux</p>
