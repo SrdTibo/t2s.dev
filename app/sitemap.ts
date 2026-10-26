@@ -1,25 +1,14 @@
+import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/components/site";
+
 export const dynamic = "force-static";
 
-const baseUrl = "https://t2s-france.com";
-
-export default function sitemap() {
+export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${baseUrl}/developpeur-web-belfort`,
-      lastModified: new Date(),
-    },
+    { url: SITE_URL, lastModified, priority: 1 },
+    { url: `${SITE_URL}/developpeur-web-belfort`, lastModified, priority: 0.9 },
+    { url: `${SITE_URL}/about`, lastModified, priority: 0.7 },
+    { url: `${SITE_URL}/contact`, lastModified, priority: 0.8 },
   ];
 }
-  

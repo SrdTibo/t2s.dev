@@ -1,7 +1,8 @@
-import ContactPageClient from "./ContactPageClient";
+import type { Metadata } from "next";
+import ContactSection from "@/components/ContactSection";
 
-export const metadata = {
-  title: "Contact – Développeur Web à Belfort | T2S",
+export const metadata: Metadata = {
+  title: "Contact – Développeur Web à Belfort",
   description:
     "Contactez-moi pour discuter de votre projet web : site vitrine, landing page, optimisation SEO ou développement sur mesure. Disponible à Belfort, Doubs, Alsace, Franche-Comté et France entière.",
   keywords: [
@@ -15,18 +16,14 @@ export const metadata = {
   ],
   openGraph: {
     title: "Contact – T2S Développeur Web Belfort",
-    description:
-      "Un projet ? Une question ? Développeur web basé à Belfort, je vous réponds rapidement.",
-    url: "https://t2s-france.com/contact",
-    siteName: "T2S Développement",
-    locale: "fr_FR",
-    type: "website",
+    description: "Un projet ? Une question ? Développeur web basé à Belfort, je vous réponds rapidement.",
+    url: "/contact",
   },
-  alternates: {
-    canonical: "https://t2s-france.com/contact",
-  },
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
-  return <ContactPageClient />;
+  return (
+    <ContactSection intro="Un besoin précis, une idée à affiner ou simplement des questions ? Décrivez votre projet et je reviens vers vous rapidement." />
+  );
 }
