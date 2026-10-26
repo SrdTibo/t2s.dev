@@ -1,4 +1,4 @@
-export const SITE_URL = "https://t2s-france.com";
+export const SITE_URL = "https://t2s.dev";
 export const SITE_NAME = "T2S Développement";
 
 export const NAV_LINKS = [
