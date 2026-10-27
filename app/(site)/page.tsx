@@ -5,64 +5,72 @@ import { ButtonLink, Card, Eyebrow } from "@/components/ui";
 import { ZONES } from "@/components/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Développeur Web à Belfort – Création de sites modernes | T2S" },
+  title: { absolute: "Agents IA & développement C/C++ à Belfort | T2S" },
   description:
-    "Développeur web basé à Belfort, spécialisé en création de sites modernes, performants et optimisés SEO. J’accompagne entreprises et indépendants en Franche-Comté, Doubs, Alsace et partout en France.",
+    "Ingénieur logiciel basé à Belfort : agents IA sur mesure, intégration de LLM, RAG sur vos données, automatisation, et développement C/C++ (système, performance, embarqué, audio temps réel).",
   keywords: [
-    "développeur web Belfort",
-    "création site internet Belfort",
-    "site vitrine Belfort",
-    "développeur Doubs",
-    "développeur Alsace",
-    "développeur Franche-Comté",
-    "freelance web Belfort",
-    "création site professionnel",
-    "Next.js",
-    "React",
-    "développeur freelance France",
+    "agent IA Belfort",
+    "intelligence artificielle Belfort",
+    "intégration LLM",
+    "RAG entreprise",
+    "automatisation IA",
+    "développeur C++ Belfort",
+    "programmation système",
+    "optimisation performance C++",
+    "embarqué IoT",
+    "audio temps réel",
+    "freelance IA Franche-Comté",
   ],
   openGraph: {
-    title: "T2S – Développeur Web à Belfort",
+    title: "T2S – Agents IA & développement C/C++",
     description:
-      "Sites web modernes, rapides et optimisés SEO. Développeur basé à Belfort, disponible dans le Doubs, l’Alsace, la Franche-Comté et toute la France.",
+      "Agents IA, LLM, RAG et automatisation, plus du C/C++ système, embarqué et temps réel. Basé à Belfort, disponible partout en France.",
     url: "/",
   },
   alternates: { canonical: "/" },
 };
 
-const SKILLS = [
+const AI_SKILLS = [
   {
-    label: "Référencement Google",
-    tag: "SEO",
-    description: "Optimisation SEO technique et visibilité sur les moteurs de recherche, dès la conception.",
+    label: "Agents IA sur mesure",
+    tag: "Agents",
+    description:
+      "Des agents qui utilisent vos outils et vos API pour exécuter des tâches complètes, pas seulement répondre à des questions.",
     className: "md:col-span-2",
   },
   {
-    label: "React / Next.js",
-    tag: "Front-end",
-    description: "Interfaces modernes, rapides et optimisées pour le SEO.",
+    label: "Intégration LLM",
+    tag: "API",
+    description: "Brancher un modèle de langage dans votre produit : assistant, extraction, résumé, classification.",
   },
   {
-    label: "WordPress",
-    tag: "CMS",
-    description: "Sites vitrines, CMS personnalisés et solutions e-commerce.",
+    label: "RAG sur vos données",
+    tag: "Données",
+    description: "Une IA qui répond à partir de vos documents et de votre base de données, avec ses sources.",
   },
   {
-    label: "TypeScript",
-    tag: "Qualité",
-    description: "Code robuste, typé et maintenable dans le temps.",
+    label: "Automatisation & workflows",
+    tag: "Process",
+    description: "Automatiser les tâches répétitives de vos équipes en y intégrant l’IA là où elle apporte vraiment.",
     className: "md:col-span-2",
   },
+];
+
+const SYSTEM_SKILLS = [
+  { label: "Programmation système", tag: "Linux", description: "Processus, mémoire, réseau bas niveau : du code proche de la machine." },
+  { label: "Optimisation & performance", tag: "Perf", description: "Profilage et accélération du code critique, algorithmie soignée." },
+  { label: "Embarqué & IoT", tag: "Hardware", description: "Microcontrôleurs, capteurs et objets connectés, de la carte au logiciel." },
+  { label: "Audio temps réel", tag: "DSP", description: "Traitement du signal et logiciels audio où chaque milliseconde compte." },
 ];
 
 const STEPS = [
-  { title: "Échange", text: "On discute de votre activité, de vos objectifs et de votre budget." },
-  { title: "Conception", text: "Structure, contenus et maquette : on valide ensemble la direction." },
-  { title: "Développement", text: "Un site rapide, responsive et pensé pour le référencement." },
-  { title: "Mise en ligne", text: "Déploiement, suivi et accompagnement après le lancement." },
+  { title: "Cadrage", text: "On identifie le problème, les données disponibles et ce qui mérite vraiment l’IA ou le bas niveau." },
+  { title: "Prototype", text: "Une première version rapide pour valider la faisabilité sur vos cas réels." },
+  { title: "Production", text: "Un code fiable, testé, mesuré et intégré à vos outils existants." },
+  { title: "Suivi", text: "Évaluation, ajustements et évolutions une fois en service." },
 ];
 
-const TECH = ["Next.js", "React", "TypeScript", "WordPress", "Tailwind CSS", "SEO technique", "Node.js", "SQL", "C / C++"];
+const TECH = ["Agents IA", "LLM", "Claude API", "MCP", "RAG", "Embeddings", "TypeScript", "SQL", "C", "C++", "Linux", "Embarqué", "DSP", "Temps réel"];
 
 export default function HomePage() {
   return (
@@ -75,7 +83,7 @@ export default function HomePage() {
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-lime opacity-60" />
               <span className="relative inline-flex size-2 rounded-full bg-lime" />
             </span>
-            Disponible pour vos projets web
+            Disponible pour vos projets IA & C/C++
           </span>
         </Reveal>
 
@@ -83,15 +91,14 @@ export default function HomePage() {
           delay={0.1}
           className="mt-8 max-w-5xl text-[clamp(2.75rem,8vw,6.5rem)] font-semibold leading-[0.95] tracking-[-0.04em]"
           segments={[
-            { text: "T2S. Votre partenaire de" },
-            { text: "développement.", className: "font-serif font-normal italic text-lime" },
+            { text: "Agents IA &" },
+            { text: "code bas niveau.", className: "font-serif font-normal italic text-lime" },
           ]}
         />
 
         <Reveal delay={0.5} className="mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <p className="max-w-xl text-lg leading-relaxed text-cream/70">
-            Des solutions modernes pour votre réussite digitale. Je conçois des sites web rapides, élégants et bien
-            référencés, depuis Belfort et partout en France.
+            Je conçois des agents IA qui travaillent vraiment pour vous, et du C/C++ là où la performance et la fiabilité comptent. Depuis Belfort, partout en France.
           </p>
           <div className="flex flex-wrap gap-3">
             <ButtonLink href="/contact">Me contacter</ButtonLink>
@@ -114,17 +121,17 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* COMPÉTENCES */}
+      {/* IA */}
       <section className="mx-auto max-w-6xl px-6 pt-32">
         <Reveal>
-          <Eyebrow>Compétences</Eyebrow>
+          <Eyebrow>Intelligence artificielle</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
-            Un stack moderne pour des projets <span className="font-serif font-normal italic text-lime">durables</span>.
+            Une IA qui <span className="font-serif font-normal italic text-lime">agit</span>, pas qui fait de la figuration.
           </h2>
         </Reveal>
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {SKILLS.map((skill, i) => (
+          {AI_SKILLS.map((skill, i) => (
             <Reveal key={skill.label} delay={i * 0.08} className={skill.className}>
               <Card className="flex h-full min-h-56 flex-col justify-between">
                 <span className="w-fit rounded-full border border-line px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-lime">
@@ -140,12 +147,40 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* C / C++ */}
+      <section className="mx-auto max-w-6xl px-6 pt-32">
+        <Reveal className="grid gap-6 md:grid-cols-2 md:items-end">
+          <div>
+            <Eyebrow>C / C++</Eyebrow>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
+              Au plus près de la <span className="font-serif font-normal italic text-lime">machine</span>.
+            </h2>
+          </div>
+          <p className="max-w-md leading-relaxed text-muted md:justify-self-end">
+            Formé à 42, je travaille le C et le C++ pour les systèmes où la mémoire, la latence et la fiabilité ne se
+            négocient pas.
+          </p>
+        </Reveal>
+
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {SYSTEM_SKILLS.map((skill, i) => (
+            <Reveal key={skill.label} delay={i * 0.08}>
+              <Card className="h-full">
+                <span className="font-mono text-xs uppercase tracking-widest text-lime">{skill.tag}</span>
+                <h3 className="mt-8 text-lg font-semibold">{skill.label}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{skill.description}</p>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* MÉTHODE */}
       <section className="mx-auto max-w-6xl px-6 pt-32">
         <Reveal>
           <Eyebrow>Méthode</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight md:text-5xl">
-            De l’idée à la mise en ligne, <span className="font-serif font-normal italic text-lime">simplement</span>.
+            De l’idée à la production, <span className="font-serif font-normal italic text-lime">simplement</span>.
           </h2>
         </Reveal>
 

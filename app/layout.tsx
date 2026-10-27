@@ -17,11 +17,11 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Développeur Web à Belfort – Création de sites modernes | T2S",
+    default: "Agents IA & développement C/C++ à Belfort | T2S",
     template: "%s | T2S",
   },
   description:
-    "Développeur web basé à Belfort : sites modernes, rapides et optimisés SEO pour entreprises et indépendants en Franche-Comté, Doubs, Alsace et partout en France.",
+    "Ingénieur logiciel basé à Belfort : agents IA, intégration de LLM, RAG et automatisation, plus du développement C/C++ système, embarqué et temps réel. Franche-Comté, Doubs, Alsace et partout en France.",
   applicationName: SITE_NAME,
   authors: [{ name: "Thibault Serdet" }],
   openGraph: {
@@ -52,6 +52,7 @@ const jsonLd = {
     addressRegion: "Bourgogne-Franche-Comté",
     addressCountry: "FR",
   },
+  knowsAbout: ["Agents IA", "LLM", "RAG", "Automatisation", "C", "C++", "Programmation système", "Systèmes embarqués", "Audio temps réel"],
   areaServed: ["Belfort", "Doubs", "Alsace", "Franche-Comté", "France"],
   sameAs: SOCIAL_LINKS.map((s) => s.href),
 };

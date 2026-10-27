@@ -5,33 +5,32 @@ import SplitText from "@/components/SplitText";
 import { ButtonLink, Card, Eyebrow } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "À propos – Développeur Web à Belfort",
+  title: "À propos – Ingénieur IA & C/C++ à Belfort",
   description:
-    "Découvrez mon parcours et ma vision du développement web. Développeur basé à Belfort, j’accompagne entreprises et indépendants en Franche-Comté, Doubs, Alsace et partout en France.",
+    "Parcours et approche de Thibault Serdet, ingénieur logiciel à Belfort : agents IA, intégration de LLM, RAG, automatisation, et développement C/C++ système, embarqué et temps réel.",
   keywords: [
-    "développeur web Belfort",
-    "développeur freelance Belfort",
-    "création site internet Belfort",
-    "développeur Doubs",
-    "développeur Alsace",
-    "développeur Franche-Comté",
-    "développeur web France",
-    "T2S",
     "Thibault Serdet",
+    "T2S",
+    "ingénieur IA Belfort",
+    "développeur C++ Belfort",
+    "agents IA",
+    "programmation système",
+    "école 42",
+    "freelance IA Franche-Comté",
   ],
   openGraph: {
     title: "À propos – T2S",
-    description: "Développeur web basé à Belfort. Parcours, compétences et approche orientée qualité et performance.",
+    description: "Ingénieur logiciel à Belfort : IA appliquée et C/C++, avec une approche orientée fiabilité et performance.",
     url: "/about",
   },
   alternates: { canonical: "/about" },
 };
 
 const EXPERTISE = [
-  { title: "Front-end", text: "JavaScript, React, Next.js et intégration d’interfaces professionnelles (Kendo UI)." },
-  { title: "Données", text: "Conception et optimisation de bases de données Oracle / SQL." },
-  { title: "Back-end", text: "Développement structuré via des ORM comme NHibernate." },
-  { title: "Fondamentaux", text: "Formé à 42 : algorithmie, C/C++, programmation système et performances." },
+  { title: "IA appliquée", text: "Agents, intégration de LLM, RAG et automatisation de workflows métier." },
+  { title: "C / C++", text: "Programmation système, algorithmie et optimisation fine des performances." },
+  { title: "Embarqué & audio", text: "Microcontrôleurs, IoT, traitement du signal et logiciels temps réel." },
+  { title: "Données", text: "Conception et optimisation de bases Oracle / SQL, socle des projets RAG." },
 ];
 
 export default function AboutPage() {
@@ -49,9 +48,9 @@ export default function AboutPage() {
           />
           <Reveal delay={0.4}>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/80">
-              J’accompagne particuliers, entreprises et startups pour concevoir, développer et déployer des sites web
-              modernes, rapides, élégants et performants. Une expertise technique au service de votre visibilité et de
-              vos objectifs.
+              J’aide entreprises et startups à mettre l’IA au travail : des agents qui automatisent de vraies tâches,
+              branchés sur leurs outils et leurs données. Et quand il faut descendre au plus près de la machine, je
+              développe en C et C++ pour l’embarqué, le temps réel et la performance.
             </p>
           </Reveal>
         </div>
@@ -61,7 +60,7 @@ export default function AboutPage() {
           <div className="overflow-hidden rounded-[2rem] border border-line">
             <Image
               src="/me.jpg"
-              alt="Photo de Thibault Serdet, développeur web à Belfort"
+              alt="Photo de Thibault Serdet, ingénieur IA et C/C++ à Belfort"
               width={640}
               height={640}
               priority

@@ -4,7 +4,7 @@ export const SITE_NAME = "T2S Développement";
 export const NAV_LINKS = [
   { href: "/", label: "Accueil" },
   { href: "/about", label: "À propos" },
-  { href: "/developpeur-web-belfort", label: "Belfort" },
+  { href: "/ia-belfort", label: "Belfort" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

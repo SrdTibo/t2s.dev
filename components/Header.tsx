@@ -150,7 +150,7 @@ export default function Header() {
               exit={{ opacity: 0 }}
               transition={{ delay: 0.45 }}
             >
-              Développeur web basé à Belfort — disponible partout en France.
+              IA & C/C++ depuis Belfort — disponible partout en France.
             </m.p>
           </m.div>
         )}

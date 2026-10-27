@@ -55,7 +55,7 @@ export default function ContactForm() {
       </div>
 
       <Field label="Sujet" htmlFor="subject">
-        <input id="subject" name="subject" type="text" required placeholder="Refonte de site, développement sur-mesure…" className={inputClass} />
+        <input id="subject" name="subject" type="text" required placeholder="Agent IA, automatisation, optimisation C++…" className={inputClass} />
       </Field>
 
       <Field label="Message" htmlFor="message">
